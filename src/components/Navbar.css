@@ -1,0 +1,367 @@
+.site-navbar {
+  height: 118px;
+  width: 100%;
+  position: relative;
+  z-index: 20;
+  color: white;
+  background: rgba(43, 42, 40, 0.73);
+  backdrop-filter: blur(13px);
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.navbar-inner {
+  width: 100%;
+  height: 100%;
+  padding: 0 2.3%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.listeo-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: white;
+  text-decoration: none;
+  font-size: 43px;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.logo-pin {
+  width: 48px;
+  height: 54px;
+  color: #ff1744;
+  stroke-width: 2.2;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 100%;
+}
+
+.nav-dropdown-wrap {
+  position: relative;
+}
+
+.nav-link {
+  height: 54px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  border: none;
+  border-radius: 32px;
+  color: white;
+  background: transparent;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.nav-link-active {
+  padding: 0 19px;
+  background: #ff1744;
+}
+
+.nav-link-active:hover {
+  background: #ed103b;
+}
+
+.nav-arrow {
+  opacity: 0.8;
+  transition: transform 0.2s;
+}
+
+.nav-arrow-open {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  min-width: 205px;
+  padding: 9px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  animation: navDropIn 0.2s ease;
+}
+
+.nav-dropdown button {
+  width: 100%;
+  display: block;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 7px;
+  text-align: left;
+  color: #555;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.nav-dropdown button:hover {
+  color: #ff1744;
+  background: #fff0f3;
+}
+
+.navbar-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-shrink: 0;
+}
+
+.cart-button {
+  position: relative;
+  width: 61px;
+  height: 61px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  background: rgba(255, 255, 255, 0.24);
+  cursor: pointer;
+}
+
+.cart-button:hover {
+  background: rgba(255, 255, 255, 0.36);
+}
+
+.cart-count {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ff1744;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.sign-in-button,
+.add-listing-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  white-space: nowrap;
+  color: white;
+  font-family: inherit;
+  font-size: 20px;
+}
+
+.sign-in-button {
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+}
+
+.add-listing-button {
+  height: 60px;
+  padding: 0 26px;
+  border: none;
+  border-radius: 35px;
+  background: #ff1744;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.add-listing-button:hover {
+  background: #e9103b;
+  transform: translateY(-2px);
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+@keyframes navDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1450px) {
+  .navbar-inner {
+    gap: 16px;
+  }
+
+  .listeo-logo {
+    font-size: 37px;
+  }
+
+  .logo-pin {
+    width: 42px;
+  }
+
+  .nav-link {
+    gap: 7px;
+    padding: 0 11px;
+    font-size: 17px;
+  }
+
+  .navbar-actions {
+    gap: 16px;
+  }
+
+  .sign-in-button,
+  .add-listing-button {
+    font-size: 17px;
+  }
+
+  .add-listing-button {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .site-navbar {
+    height: 90px;
+  }
+
+  .navbar-inner {
+    padding: 0 20px;
+  }
+
+  .mobile-menu-button {
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+    padding: 8px;
+    border: none;
+    color: white;
+    background: transparent;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    height: auto;
+    padding: 15px 20px;
+    align-items: stretch;
+    flex-direction: column;
+    background: #292826;
+  }
+
+  .navbar-links.mobile-open {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav-dropdown {
+    position: static;
+    margin: 5px 0 10px 12px;
+  }
+
+  .navbar-actions {
+    margin-left: 0;
+    gap: 12px;
+  }
+
+  .cart-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .sign-in-button span {
+    display: none;
+  }
+
+  .add-listing-button {
+    height: 49px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-navbar {
+    height: 76px;
+  }
+
+  .navbar-inner {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .listeo-logo {
+    gap: 4px;
+    font-size: 31px;
+  }
+
+  .logo-pin {
+    width: 34px;
+    height: 42px;
+  }
+
+  .navbar-links {
+    top: 76px;
+  }
+
+  .navbar-actions {
+    gap: 7px;
+  }
+
+  .cart-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .cart-button svg {
+    width: 20px;
+  }
+
+  .cart-count {
+    top: -5px;
+    right: -5px;
+    width: 21px;
+    height: 21px;
+    font-size: 12px;
+  }
+
+  .sign-in-button {
+    display: none;
+  }
+
+  .add-listing-button {
+    height: 39px;
+    padding: 0 9px;
+    gap: 4px;
+    font-size: 12px;
+  }
+
+  .add-listing-button svg {
+    width: 16px;
+  }
+}
